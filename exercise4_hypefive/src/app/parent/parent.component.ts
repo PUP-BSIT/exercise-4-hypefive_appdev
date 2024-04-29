@@ -39,7 +39,6 @@ export class ParentComponent {
       book_language: 'English',
     },
   ];
-
   //Temporarily save the book_id
   tempId = {
     book_id: null,
@@ -62,7 +61,42 @@ export class ParentComponent {
     this.publication_year = null;
     this.language = '';
   }
-
-  //TODO (Ternal, April): edit function
+  //populate the input field
+  getBookDetails(bookId: number) {
+    //find the book to update
+    const bookToUpdate = this.book_library.find(
+      (book) => book.book_id === bookId
+    );
+    if (bookToUpdate) {
+      this.title = bookToUpdate.book_title;
+      this.author = bookToUpdate.book_author;
+      this.rating = bookToUpdate.book_rating;
+      this.publication_year = bookToUpdate.book_publication_year;
+      this.language = bookToUpdate.book_language;
+    }
+    //store the book_id
+    this.tempId = bookToUpdate;
+  }
+  //update the book details
+  updateBookDetails() {
+    //find the book using the saved book_id in the temporary variable
+    const bookToUpdate = this.book_library.find(
+      (book) => book.book_id === this.tempId.book_id
+    );
+    //pass the new value
+    if (bookToUpdate) {
+      bookToUpdate.book_title = this.title;
+      bookToUpdate.book_author = this.author;
+      bookToUpdate.book_rating = this.rating;
+      bookToUpdate.book_publication_year = this.publication_year;
+      bookToUpdate.book_language = this.language;
+    }
+    //reset the input field
+    this.title = '';
+    this.author = '';
+    this.rating = '';
+    this.publication_year = null;
+    this.language = '';
+  }
   //TODO (Mentok, Almera): delete function
 }

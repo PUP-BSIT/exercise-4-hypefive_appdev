@@ -6,10 +6,14 @@
   <input
     type="number"
     placeholder="Publication Year"
-    [(ngModel)]="publication_year"/>
+    [(ngModel)]="publication_year"
+  />
   <input type="string" placeholder="Language" [(ngModel)]="language" />
   <div class="button-container">
     <button type="button" class="add-btn" (click)="addBook()">Add Book</button>
+    <button type="button" class="update-btn" (click)="updateBookDetails()">
+      Update
+    </button>
   </div>
 </div>
 
