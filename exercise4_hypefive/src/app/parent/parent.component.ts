@@ -7,6 +7,12 @@ import { Book } from '../model/books';
   styleUrl: './parent.component.css',
 })
 export class ParentComponent {
+  title: string;
+  author: string;
+  rating: string;
+  publication_year: number;
+  language: string;
+
   book_library: Book[] = [
     {
       book_id: 0,
@@ -33,7 +39,30 @@ export class ParentComponent {
       book_language: 'English',
     },
   ];
-  //TODO (Tapispisan, Yves): add function
+
+  //Temporarily save the book_id
+  tempId = {
+    book_id: null,
+  };
+
+  addBook() {
+    const newBook = {
+      book_id: this.book_library.length,
+      book_title: this.title,
+      book_author: this.author,
+      book_rating: this.rating,
+      book_publication_year: this.publication_year,
+      book_language: this.language,
+    };
+    //resets the input field
+    this.book_library.push(newBook);
+    this.title = '';
+    this.author = '';
+    this.rating = '';
+    this.publication_year = null;
+    this.language = '';
+  }
+
   //TODO (Ternal, April): edit function
   //TODO (Mentok, Almera): delete function
 }
