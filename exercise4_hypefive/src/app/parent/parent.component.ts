@@ -98,5 +98,10 @@ export class ParentComponent {
     this.publication_year = null;
     this.language = '';
   }
-  //TODO (Mentok, Almera): delete function
+  
+  deleteBook(bookId: number) {
+    if (bookId !== -1) {
+      this.book_library.splice(bookId, 1);
+    }
+  }
 }
