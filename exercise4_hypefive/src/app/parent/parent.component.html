@@ -1,1 +1,13 @@
-<p>parent works!</p>
+<div class="book-container">
+  <div class="book-item" *ngFor="let book of book_library; let i = index">
+    <app-child [book]="book"></app-child>
+    <div class="button-container">
+      <button type="button" class="edit-btn" (click)="getBookDetails(i)">
+        Edit
+      </button>
+      <button type="button" class="delete-btn" (click)="deleteBook(i)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
