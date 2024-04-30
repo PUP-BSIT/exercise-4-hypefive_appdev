@@ -1,4 +1,4 @@
-![image](https://github.com/PUP-BSIT/exercise-4-hypefive_appdev/assets/146617812/2ec70191-9f86-4e63-ac27-d698c39e81ec)# Exercise4Hypefive
+# Exercise4Hypefive
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 Visit our Netlify page!: https://hypelibrary.netlify.app/
